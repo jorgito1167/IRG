@@ -2,7 +2,7 @@
 
 
 int wheel = 2;
-double values[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
+float values[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
 int count=0;
 unsigned long oldtime;
 unsigned long time;
@@ -60,8 +60,8 @@ void getSpeed(){
   
 }
 
-double average(double array[]){
-  double total= 0;
+double average(float array[]){
+  float total= 0;
   for (int i = 0; i< 12; i++){
     total = array[i] + total;
   }
@@ -69,7 +69,7 @@ double average(double array[]){
 }
 
 
-void printDouble( double val, unsigned int precision){
+void printFloat( float val, unsigned int precision){
 // prints val with number of decimal places determine by precision
 // NOTE: precision is 1 followed by the number of zeros for the desired number of decimial places
 // example: printDouble( 3.1415, 100); // prints 3.14 (two decimal places)

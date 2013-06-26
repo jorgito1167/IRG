@@ -6,9 +6,9 @@ double values[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
 int count=0;
 unsigned long oldtime;
 unsigned long time;
-float delta;
-float vel;
-float averageVel;
+double delta;
+double vel;
+double averageVel;
 const double conversion = 0.017674*3.6*2;
 boolean initialized = false;
 String integer;
@@ -32,9 +32,10 @@ void setup() {
 void loop() {
   averageVel=average(values);
   String integer = String(int(averageVel));
-  String fraction = String(int((averageVel -int(averageVel))*1000));
+  String fraction = String(int((averageVel -int(averageVel))*100000));
 
-  Serial.println(integer + decimalFraction + fraction);
+  
+  printDouble(averageVel,100000);
   delay(200);   
   
        
